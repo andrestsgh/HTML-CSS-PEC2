@@ -28,7 +28,7 @@
         <div class="container">
         <nav>
             <ul>
-                <li class="menu-title"><a href="index.html"><span class="fira-sans-bold">RUTA</span><span class="fira-sans-extralight">PERFECTA</span></a></li>
+                <li id="menu-title"><a href="index.html"><span class="fira-sans-bold">RUTA</span><span class="fira-sans-extralight">PERFECTA</span></a></li>
                 <li><a href="resenas.html">Reseñas</a></li>
                 <li><a href="destinos.html">Destinos</a></li>
                 <li><a class="active-link" href="informacion.html">Viaja con nosotros</a></li>
@@ -36,66 +36,71 @@
         </nav></div>
     </header>
     <main class="container">
-        <form action="#" method="post">
+        <h1>Formulario de preferencias de viaje</h1>
+        <form class="contact-form" action="#" method="post">
             <fieldset>
                 <legend>Información personal</legend>
-                <div>
-                    <label for="nombre" class="obligatorio">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" pattern="[A-Za-zÁÉÍÓÚáéíóú\s'-]{3,64}" required>
-                </div>
-                <div>
-                    <label for="apellidos" class="obligatorio">Apellidos:</label>
-                    <input type="text" id="apellidos" name="apellidos" pattern="[A-Za-zÁÉÍÓÚáéíóú\s'-]{3,128}" required>
-                </div>
-                <div>
-                    <label for="email" class="obligatorio">Correo electrónico:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div>
-                    <label for="telefono">Teléfono:</label>
-                    <input type="tel" id="telefono" name="telefono">
-                </div>
+                <ul>
+                    <li>
+                        <label for="nombre" class="required">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" pattern="[A-Za-zÁÉÍÓÚáéíóú\s'-]{3,64}" required>
+                    </li>
+                    <li>
+                        <label for="apellidos" class="required">Apellidos</label>
+                        <input type="text" id="apellidos" name="apellidos" pattern="[A-Za-zÁÉÍÓÚáéíóú\s'-]{3,128}" required>
+                    </li>
+                    <li>
+                        <label for="email" class="required">Correo electrónico</label>
+                        <input type="email" id="email" name="email" required>
+                    </li>
+                    <li>
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono">
+                    </li>
+                </ul>
             </fieldset>
 
             <fieldset>
                 <legend>Viaje</legend>
-                <div>
-                    <label for="destino" class="obligatorio">Destino deseado:</label>
-                    <select id="destino" name="destino" required>
-                        <option value="">Selecciona un destino</option>
-                        <option value="aventura">Aventura en la naturaleza</option>
-                        <option value="gastronomia">Ruta del vino y la gastronomía</option>
-                        <option value="asia">Cultura y aventura en Asia</option>
-                        <option value="romantica">Escapada romántica por Europa</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="fecha" class="obligatorio">Fecha de inicio del viaje:</label>
-                    <input type="date" id="fecha" name="fecha" required>
-                </div>
-                <div>
-                    <label for="alojamiento" class="obligatorio">Tipo de alojamiento:</label>
-                    <select id="alojamiento" name="alojamiento" required>
-                        <option value="">Selecciona un tipo de alojamiento</option>
-                        <option value="hotel">Hotel</option>
-                        <option value="hostal">Hostal</option>
-                        <option value="apartamento">Apartamento vacacional</option>
-                        <option value="albergue">Albergue</option>
-                        <option value="sin-preferencia">Sin preferencia específica</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="transporte" class="obligatorio">Tipo de transporte en destino:</label>
-                    <select id="transporte" name="transporte" required>
-                        <option value="">Selecciona un tipo de transporte</option>
-                        <option value="publico">Transporte público</option>
-                        <option value="coche">Alquiler de coche</option>
-                    </select>
-                </div>
+                <ul>
+                    <li>
+                        <label for="destino" class="required">Destino deseado</label>
+                        <select id="destino" name="destino" required>
+                            <option value="">Elige una opción</option>
+                            <option value="aventura">Aventura en la naturaleza</option>
+                            <option value="gastronomia">Ruta del vino y la gastronomía</option>
+                            <option value="asia">Cultura y aventura en Asia</option>
+                            <option value="romantica">Escapada romántica por Europa</option>
+                        </select>
+                    </li>
+                    <li>
+                        <label for="fecha" class="required">Fecha de inicio del viaje</label>
+                        <input type="date" id="fecha" name="fecha" required>
+                    </li>
+                    <li>
+                        <label for="alojamiento" class="required">Tipo de alojamiento</label>
+                        <select id="alojamiento" name="alojamiento" required>
+                            <option value="">Elige una opción</option>
+                            <option value="hotel">Hotel</option>
+                            <option value="hostal">Hostal</option>
+                            <option value="apartamento">Apartamento vacacional</option>
+                            <option value="albergue">Albergue</option>
+                            <option value="sin-preferencia">Sin preferencia específica</option>
+                        </select>
+                    </li>
+                    <li>
+                        <label for="transporte" class="required">Tipo de transporte en destino</label>
+                        <select id="transporte" name="transporte" required>
+                            <option value="">Elige una opción</option>
+                            <option value="publico">Transporte público</option>
+                            <option value="coche">Alquiler de coche</option>
+                        </select>
+                    </li>
+                </ul>
             </fieldset>
 
             <fieldset>
-                <legend>Método de pago</legend>
+                <legend class="required">Método de pago</legend>
                 <div>
                     <input type="radio" id="paypal" name="pago" value="paypal" required>
                     <label for="paypal">Paypal</label>
@@ -113,12 +118,27 @@
             <fieldset>
                 <legend>Otras informaciones</legend>
                 <div>
-                    <label for="comentarios">Comentarios o peticiones especiales:</label>
-                    <textarea id="comentarios" name="comentarios" rows="4"></textarea>
+                    <label for="comentarios">Comentarios o peticiones especiales</label>
+                    <textarea id="comentarios" name="comentarios" rows="7"></textarea>
                 </div>
             </fieldset>
 
-            <input type="submit" value="Enviar">
+            <fieldset>
+                <div>
+                    <p class="fira-sans-regular">
+                        INFORMACIÓN SOBRE PROTECCIÓN DE DATOS DE <strong>RUTA PERFECTA. Finalidades:</strong> recogida de datos para la solicitud de información. 
+                        <strong>Legitimación:</strong> consentimiento del interesado. <strong>Destinatarios:</strong> no están previstas cesiones de datos a terceros, excepto 
+                        obligación legal. <strong>Derechos:</strong> puede retirar su consentimiento en cualquier momento, así como acceder, rectificar, suprimir 
+                        sus datos y otros derechos dirigiéndose a <a href="mailto:info@rutaperfecta.com">info@rutaperfecta.com</a>. 
+                        <strong>Información adicional:</strong> puede ampliar la información en el enlace de <a href="#">Aviso Legal</a> y 
+                        <a href="#">Política de privacidad</a>.
+                    </p>
+                    <input type="checkbox" id="politica_privacidad" name="politica_privacidad" value="politica_privacidad" required> 
+                    <label for="politica_privacidad" class="required">He leído y acepto la <a href="#">política de privacidad</a></label>
+                </div>
+                <input type="submit" value="Enviar">
+            </fieldset>
+
         </form>
     </main>
 
@@ -130,7 +150,7 @@
                 <li>・</li>
                 <li><a href="#">Política de privacidad</a></li>
                 <li>・</li>
-                <li><a href="#">Política de cookies</a></li>
+                <li><a href="#">Política de <i lang="en">cookies</i></a></li>
             </ul>
         </div>
     </footer>

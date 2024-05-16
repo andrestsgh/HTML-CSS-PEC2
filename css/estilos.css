@@ -1,26 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* Variables de colores */
+/* Color variables */
 :root {
-    --color-texto: #081226;
-    --color-fondo-oscuro: #F2F2F2;
-    --color-contraste: #FFD920;
-    --color-fondo-cabecera: #1B2459;
-    --color-enlaces: #F2F2F2;
-    --color-enlaces-hover: #FFD920;
-    --color-borde-enlace: #081226;
-    --color-borde-enlace-hover: #081226;
-    --color-fondo-boton: #FFD920;
-    --color-texto-boton: #081226;
-    --color-fondo-boton-hover: #1B2459;
-    --color-texto-boton-hover: #F2F2F2;
-    --color-obligatorio: #FF0000;
-    --color-fondo-formulario: #FFFFFF;
-    --color-borde-valido: #4CAF50;
-    --color-borde-no-valido: #FF0000;
+    --color-text: #081226;
+    --color-dark-backgorund: #F2F2F2;
+    --color-contrast: #FFD920;
+    --color-background-header-footer: #1B2459;
+    --color-mandatory: #FF0000;
+    --color-form-background: #FFFFFF;
+    --color-form-border-valid: #4CAF50;
+    --color-form-border-invalid: #FF0000;
 }
 
-/* Estilos de fuente */
+/* Font Styles */
 .fira-sans-extralight, nav,footer {
     font-family: "Fira Sans", sans-serif;
     font-weight: 200;
@@ -51,7 +43,7 @@
     font-style: italic;
 }
 
-/* Estilos globales */
+/* Global Styles */
 html {
     font-size: 16px;
 }
@@ -68,83 +60,55 @@ h3{
     font-size: 1.5rem;
 }
 
-h4{
-    font-size: 1.25rem;
-}
-
-h5{
-    font-size: 1rem;
-}
-
-h6{
-    font-size: 0.875rem;
-}
-
 p{
     font-size: 1.1rem;
     text-align: left;
 }
 
+/* Structure Styles */
 body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
     font-family: "Fira Sans", sans-serif;
-    background-color: var(--color-fondo-formulario);
-    color: var(--color-texto);
+    background-color: var(--color-form-background);
+    color: var(--color-text);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header, footer {
-    background-color: var(--color-fondo-cabecera);
-    color: var(--color-enlaces);
-    text-align: center;
+    background-color: var(--color-background-header-footer);
+    color: var(--color-dark-backgorund);
     padding: 0.1em 1em 1em 1em;
 }
 
 main {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
     padding: 2em 0em;
 }
 
 main a {
     text-decoration: none;
-    color: var(--color-texto);
-    border-bottom: 1px dotted var(--color-texto);
+    color: var(--color-text);
+    border-bottom: 1px dotted var(--color-text);
 }
 
 main a:hover{
     border-bottom-style: solid;
 }
 
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    text-align: left;
-    font-size: 1.125rem;
-}
-
-nav ul li {
-    display: inline;
-    padding-right: 1.8em;
-}
-
-nav ul li a {
-    color: var(--color-enlaces);
-    text-decoration: none;
-    padding-bottom: 3px;
-    border-bottom: 3px solid transparent;
-}
-
-nav ul li a:hover {
-    color: var(--color-enlaces-hover);
-}
-footer p{
-    font-size: 0.75rem;
+footer {
+    margin-top: auto;
 }
 
 footer ul {
     font-size: 0.75rem;
     list-style-type: none;
-    padding: 0;
+    padding: 0em;
     text-align: left;
 }
 
@@ -152,15 +116,44 @@ footer ul li {
     display: inline;
 }
 
-footer ul li a {
-    color: var(--color-enlaces);
-    text-decoration: none;
+footer p{
+    font-size: 0.75rem;
 }
 
+.container {
+    width: 95%;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Menu Style */
+nav ul {
+    list-style-type: none;
+    padding: 0em;
+    text-align: left;
+    font-size: large;
+}
+
+nav ul li {
+    display: inline;
+    padding-right: 1.8em;
+}
+
+nav ul li a, footer a {
+    color: var(--color-dark-backgorund);
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+}
+
+nav ul li a:hover, footer a:hover {
+    color: var(--color-contrast);
+}
+
+/* Article Style */
 article {
     margin: 0em auto 2em auto;
     width: 70%;
-    
 }
 
 article > h2 {
@@ -173,115 +166,224 @@ article > figure {
 }
 
 .active-link {
-    border-bottom-color: var(--color-contraste);
+    border-bottom-color: var(--color-contrast);
 }
 
-.container {
-    width: 95%;
-    max-width: 1100px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.menu-title {
+#menu-title {
     font-size: 3rem;
     display: block;
 }
 
-/* Estilos específicos para index.html */
-#index-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+/* index.html Styles */
+#body-index-background {
     background-image: url('../img/bg-home.jpg');
     background-size: cover;
     background-position: center;
-    color: var(--color-fondo-oscuro);
+    color: var(--color-dark-backgorund);
 }
 
-#index-container h1 {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
+#body-index-background > header > nav{
+    float: right;
 }
 
-#index-container img {
-    width: 150px;
-    height: auto;
-    margin-left: 1rem;
+#body-index-background > main{
+    flex-direction: column;
+    display: flex;
 }
 
+#body-index-background > main > div{
+    display: flex;
+    width: 100%;
+}
 
-/* Estilos específicos para destinos.html */
+.transparent {
+    background-color: transparent;
+}
+
+.font-size-index{
+    font-size: 8rem;
+    margin: 0;
+    line-height: 1em;
+}
+
+#index-image {
+    margin-left: auto;
+}
+
+/* destinos.html Styles */
+.background-color-contrast {
+    background-color: var(--color-contrast);
+    padding: 0em 1em;
+}
+.background-color-dark {
+    background-color: var(--color-dark-backgorund);
+    text-align: center;
+    padding: 1em;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 2rem;
+    margin-bottom: 2em;
 }
 
-th, td {
-    padding: 0.5rem;
-    border: 1px solid var(--color-texto);
+caption {
+    border-left: 1px solid var(--color-text);
+    border-top: 1px solid var(--color-text);
+    border-right: 1px solid var(--color-text);
+    font-size: x-large;
+}
+
+thead {
+    background-color: var(--color-dark-backgorund);
+    text-align: left;
+    font-size: medium;
+}
+
+tfoot > tr > td{
+    font-size: small;
 }
 
 th {
-    background-color: var(--color-fondo-cabecera);
-    color: var(--color-enlaces);
+   font-weight: normal;
+}
+
+th, td {
+    padding: 0.5em;
+    border: 1px solid var(--color-text);
+    vertical-align: top;
+    text-align: left;
+    font-size: large;
+}
+
+tbody td:first-child {
     font-weight: bold;
+    font-size: larger;
 }
 
-/* Estilos específicos para informacion.html */
-.formulario {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 2rem;
-    background-color: var(--color-fondo-formulario);
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+td > ul {
+    padding-left: 1em;
+    margin: 0;
+    list-style: square;
 }
 
-.formulario label {
-    display: block;
-    margin-bottom: 0.5rem;
+td > ul > li {
+    margin-bottom: 1em;
+}
+
+thead th:nth-child(1) {
+    width: 25%;
+}
+  
+thead th:nth-child(2) {
+    width: 17.5%;
+}
+  
+thead th:nth-child(3) {
+    width: 8%;
+}
+
+/* informacion.html Styles */
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+textarea {
+    overflow: auto;
+}
+
+.contact-form {
+    margin: 2em auto;
+    width: 80%;
+    background-color: var(--color-form-background);
+}
+
+.contact-form fieldset{
+    border: none;
+    border-radius: 0.3em;
+    background-color: var(--color-dark-backgorund);
     font-weight: bold;
+    font-size: 1.4rem;
+    margin: 1em auto;
+    padding: 1em 1em 2em 1em;
 }
 
-.formulario input[type="text"],
-.formulario input[type="email"],
-.formulario input[type="tel"],
-.formulario select,
-.formulario textarea {
+.contact-form > fieldset > ul {
+    list-style: none;
+    padding-left: 0em;
+    margin: 0em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5em;
+}
+
+.contact-form label {
+    font-weight: normal;
+    font-size: large;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form input[type="date"],
+.contact-form select,
+.contact-form textarea {
     width: 100%;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    border: 1px solid var(--color-texto);
+    padding: 0.5em;
+    margin: 0.5em 0em;
+    border: 1px solid var(--color-text);
     border-radius: 5px;
+    display: block;
 }
 
-.formulario input[type="submit"] {
-    background-color: var(--color-fondo-boton);
-    color: var(--color-texto-boton);
-    padding: 0.5rem 1rem;
+.contact-form input[type="checkbox"],
+.contact-form input[type="radio"] {
+    margin: 1em 0em;
+}
+
+.contact-form select {
+    background-color: #FFFFFF;
+}
+
+.contact-form input[type="submit"] {
+    background-color: var(--color-contrast);
+    text-transform: uppercase;
+    font-size: large;
+    padding: 1em;
+    margin-top: 0.5em;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-/* Estilos para campos obligatorios */
-.formulario label.obligatorio::after {
-    content: "*";
-    color: var(--color-obligatorio);
-    margin-left: 0.1rem;
+.contact-form > fieldset p {
+    font-size: 0.78rem;
+    margin: 0em 0em 0.5em 0em;
 }
 
-/* Estilos para validación de formularios */
-.formulario input:invalid,
-.formulario textarea:invalid {
-    border-color: var(--color-borde-no-valido);
+/* Mandatory fields */
+.contact-form label.required::after,
+.contact-form legend.required::after {
+    content: " *";
+    color: var(--color-mandatory);
+    margin-left: 0.1em;
 }
 
-.formulario input:valid,
-.formulario textarea:valid {
-    border-color: var(--color-borde-valido);
+/* Form validation */
+.contact-form input:invalid,
+.contact-form select:invalid,
+.contact-form textarea:invalid {
+    border-color: var(--color-form-border-invalid);
+}
+
+.contact-form input:valid,
+.contact-form select:valid,
+.contact-form textarea:valid {
+    border-color: var(--color-form-border-valid);
 }
