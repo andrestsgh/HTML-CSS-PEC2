@@ -150,6 +150,15 @@ nav ul li a:hover, footer a:hover {
     color: var(--color-contrast);
 }
 
+.current {
+    border-bottom-color: var(--color-contrast);
+}
+
+#menu-title {
+    font-size: 3rem;
+    display: block;
+}
+
 /* Article Style */
 article {
     margin: 0em auto 2em auto;
@@ -163,15 +172,6 @@ article > h2 {
 article > figure {
     text-align: center;
     font-size: 0.75rem;
-}
-
-.active-link {
-    border-bottom-color: var(--color-contrast);
-}
-
-#menu-title {
-    font-size: 3rem;
-    display: block;
 }
 
 /* index.html Styles */
@@ -363,6 +363,7 @@ textarea {
 }
 
 .contact-form > fieldset p {
+    
     font-size: 0.78rem;
     margin: 0em 0em 0.5em 0em;
 }
